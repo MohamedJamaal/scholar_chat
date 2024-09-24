@@ -63,3 +63,9 @@ flutter {
 configurations.implementation {
         exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib-jdk8'
     }
+
+android {                                                                                     
+   defaultConfig {                                                                            
+     minSdkVersion 23                                                                        
+   }                                                                                          
+ } 
