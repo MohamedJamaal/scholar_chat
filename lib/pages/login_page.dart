@@ -1,5 +1,6 @@
 import 'package:app/constants.dart';
 import 'package:app/helper/show_snack_bar.dart';
+import 'package:app/pages/chat_page.dart';
 import 'package:app/pages/register_page.dart';
 import 'package:app/widgets/custom_button.dart';
 import 'package:app/widgets/custom_text_field.dart';
@@ -10,7 +11,7 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({super.key});
-
+  static String id = 'login page';
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
@@ -96,6 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                       try {
                         await loginUser();
                         showSnackBar(context, 'Logged in');
+                        Navigator.pushNamed(context, ChatPage.id);
                       } on FirebaseAuthException catch (e) {
                         if (e.code == 'user-not-found') {
                           showSnackBar(context, 'User not found');
