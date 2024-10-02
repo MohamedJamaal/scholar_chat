@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CustomFormTextField extends StatelessWidget {
-  CustomFormTextField({super.key, this.hintText, this.onChanged});
+  CustomFormTextField(
+      {super.key, this.hintText, this.onChanged, this.obsecureText = false});
   String? hintText;
+  bool? obsecureText;
   Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscureText: obsecureText!,
       validator: (value) {
         if (value!.isEmpty) {
           return 'Fields must NOT be empty';
