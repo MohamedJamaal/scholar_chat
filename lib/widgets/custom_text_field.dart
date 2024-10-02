@@ -29,6 +29,7 @@ class CustomFormTextField extends StatelessWidget {
           ),
         ),
       ),
+      style: TextStyle(color: Colors.white),
     );
   }
 }
